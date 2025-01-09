@@ -222,6 +222,31 @@ public class Main {
 	    }
 
 	    return newList;  
+		
 	}
+
+	public static int ex6WeaklyInreasing(IntNode head) {
+    int maxLength = 1;
+
+    IntNode current = head;
+
+    while (current != null) {
+        int currentLength = 1;
+        IntNode p = current;
+
+        while (p.hasNext() && p.getNext().getValue() >= p.getValue()) {
+            currentLength++;
+            p = p.getNext();
+        }
+
+        if (currentLength > maxLength) {
+            maxLength = currentLength;
+        }
+
+        current = current.getNext();
+    }
+
+    return maxLength;
+}
 
 }
