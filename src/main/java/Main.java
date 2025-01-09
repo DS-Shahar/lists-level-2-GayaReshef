@@ -225,14 +225,14 @@ public class Main {
 		
 	}
 
-	public static int ex6WeaklyInreasing(IntNode head) {
+	public static int ex6WeaklyInreasing(Node<Integer> head) {
     int maxLength = 1;
 
-    IntNode current = head;
+    Node<Integer> current = head;
 
     while (current != null) {
         int currentLength = 1;
-        IntNode p = current;
+        Node<Integer> p = current;
 
         while (p.hasNext() && p.getNext().getValue() >= p.getValue()) {
             currentLength++;
